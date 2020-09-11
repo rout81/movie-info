@@ -59,12 +59,14 @@ const imglist = [
 
 const mapStateToProps = (state) => {
   return {
-    imglink: state.imagePath,
-    isPending: state.isPending,
-    error: state.error,
-    baseurl: state.heroAssets.baseUrl,
-    backdropSize: state.heroAssets.backdropSize[0],
-    posterSize: state.heroAssets.posterSize,
+    posterPath: state.movieHero.posterPath,
+    backdropPath: state.movieHero.backdropPath,
+    isPending: state.movieHero.isPending,
+    error: state.movieHero.error,
+    baseUrl: state.movieHero.heroAssets.baseUrl,
+    posterSize: state.movieHero.heroAssets.posterSize,
+    backdropSize: state.movieHero.heroAssets.backdropSize,
+    test: state.movieHero.test,
   };
 };
 
@@ -72,96 +74,97 @@ const mapDispatchToProps = (dispatch) => {
   return { requestPopularMovie: () => dispatch(getPopularMovie()) };
 };
 
-const Hero = (props) => {
+const Hero = ({
+  test,
+  backdropPath,
+  posterPath,
+  isPending,
+  error,
+  baseUrl,
+  posterSize,
+  backdropSize,
+  requestPopularMovie,
+}) => {
   const cover = (
     <Fragment>
       <div className="imgcontainer item0">
         <img
           className="image img0"
-          src={imglist[0].img}
+          src={baseUrl + posterSize[3] + posterPath[1]}
           alt={imglist[0].item}
         />
       </div>
       <div className="imgcontainer item1">
         <img
           className="image img1"
-          src={imglist[0].img}
+          src={baseUrl + backdropSize[1] + backdropPath[0]}
           alt={imglist[0].item}
         />
       </div>
       <div className="imgcontainer item2">
         <img
           className="image img2"
-          src={imglist[0].img}
+          src={baseUrl + backdropSize[1] + backdropPath[4]}
           alt={imglist[0].item}
         />
       </div>
       <div className="imgcontainer item3">
         <img
           className="image img3"
-          src={imglist[0].img}
+          src={baseUrl + posterSize[3] + posterPath[2]}
           alt={imglist[0].item}
         />
       </div>
       <div className="imgcontainer item4">
         <img
           className="image img4"
-          src={imglist[0].img}
+          src={baseUrl + posterSize[2] + posterPath[8]}
           alt={imglist[0].item}
         />
       </div>
       <div className="imgcontainer item5">
         <img
           className="image img5"
-          src={imglist[0].img}
+          src={baseUrl + posterSize[2] + posterPath[9]}
           alt={imglist[0].item}
         />
       </div>
       <div className="imgcontainer item6">
         <img
           className="image img6"
-          src={imglist[0].img}
+          src={baseUrl + posterSize[2] + posterPath[5]}
           alt={imglist[0].item}
         />
       </div>
       <div className="imgcontainer item7">
         <img
           className="image img7"
-          src={imglist[0].img}
+          src={baseUrl + posterSize[2] + posterPath[6]}
           alt={imglist[0].item}
         />
       </div>
       <div className="imgcontainer item8">
         <img
           className="image img8"
-          src={imglist[0].img}
+          src={baseUrl + backdropSize[1] + backdropPath[3]}
           alt={imglist[0].item}
         />
       </div>
       <div className="imgcontainer item9">
         <img
           className="image img9"
-          src={imglist[0].img}
+          src={baseUrl + posterSize[2] + posterPath[7]}
           alt={imglist[0].item}
         />
       </div>
     </Fragment>
   );
 
-  const { requestPopularMovie } = props;
-
   useEffect(() => {
     requestPopularMovie();
   }, [requestPopularMovie]);
 
-  console.log(
-    props.baseurl,
-    "baseurl",
-    props.backdropSize,
-    "backdropsize",
-    props.imglink[0].backdrop_path,
-    "imglink"
-  );
+  console.log(test.test1);
 
   return (
     <div className="container">

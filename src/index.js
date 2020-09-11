@@ -4,12 +4,17 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import thunkMiddleware from "redux-thunk";
 import { movieHero } from "./redux/reducers";
 import logger from "redux-logger";
 
-const store = createStore(movieHero, applyMiddleware(thunkMiddleware, logger));
+const rootReducers = combineReducers({ movieHero });
+
+const store = createStore(
+  rootReducers,
+  applyMiddleware(thunkMiddleware, logger)
+);
 
 ReactDOM.render(
   <Provider store={store}>

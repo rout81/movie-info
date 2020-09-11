@@ -12,9 +12,18 @@ export const getPopularMovie = () => (dispatch) => {
   fetch(movieHeroFetch)
     .then((response) => response.json())
     .then((user) => {
-      const data = user.results;
-      const mod = data.slice(0, 10);
-      dispatch({ type: REQUEST_MOVIE_SUCCESS, payload: mod });
+      const backdropPath = user.results
+        .sort((a, b) => b.popularity - a.popularity)
+        .slice(0, 10)
+        .map((backdrop) => backdrop.backdrop_path);
+      const posterPath = user.results
+        .sort((a, b) => b.popularity - a.popularity)
+        .slice(0, 10)
+        .map((poster) => poster.poster_path);
+      dispatch({
+        type: REQUEST_MOVIE_SUCCESS,
+        payload: { backdropPath: backdropPath, posterPath: posterPath },
+      });
     })
     .catch((error) => dispatch({ type: REQUEST_MOVIE_FAILED, payload: error }));
 };

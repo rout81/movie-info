@@ -6,10 +6,11 @@ import {
 
 const initialStateHero = {
   isPending: false,
-  imagePath: [],
+  backdropPath: [],
+  posterPath: [],
   error: "",
   heroAssets: {
-    baseUrl: "https://image.tmdb.org/t/p/",
+    baseUrl: "https://image.tmdb.org/t/p",
     posterSize: [
       "/w92",
       "/w154",
@@ -21,6 +22,10 @@ const initialStateHero = {
     ],
     backdropSize: ["/w300", "/w780", "/w1280", "/original"],
   },
+  test: {
+    test1: "hel",
+    test2: "lo",
+  },
 };
 
 export const movieHero = (state = initialStateHero, action = {}) => {
@@ -28,7 +33,13 @@ export const movieHero = (state = initialStateHero, action = {}) => {
     case REQUEST_MOVIE_PENDING:
       return { ...state, isPending: true };
     case REQUEST_MOVIE_SUCCESS:
-      return { ...state, imagePath: action.payload, isPending: false };
+      return {
+        ...state,
+        backdropPath: action.payload.backdropPath,
+        posterPath: action.payload.posterPath,
+        isPending: false,
+        test: { test1: "good", test2: "bye" },
+      };
     case REQUEST_MOVIE_FAILED:
       return { ...state, error: action.payload };
     default:
