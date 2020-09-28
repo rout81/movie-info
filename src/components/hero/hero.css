@@ -41,7 +41,29 @@
 
 .item8 {
   grid-column: 3 / span 3;
-} /*
+}
+
+.imgcontainer {
+  position: relative;
+}
+
+.imgcontainer:hover .title {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.349);
+  cursor: pointer;
+}
+
+.imgcontainer:hover .title p {
+  margin-top: 30%;
+  text-align: center;
+}
+
+/*
 .item9 {
   grid-column: 1 / span 3;
   grid-row: 1 / span 2;
