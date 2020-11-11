@@ -1,21 +1,18 @@
-import React, { Fragment } from "react";
-import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
-import classes from "./header.module.css";
+import React from "react";
+import "./header.css";
+import logo from "../../assets/logo.png";
 
 const Header = () => {
   return (
-    <Fragment>
-      <AppBar position="static">
-        <Toolbar className={classes.pribg}>
-          <Typography variant="h6">DisMov</Typography>
-          <div>
-            <Button color="inherit">Movies</Button>
-            <Button color="inherit">TV</Button>
-            <Button color="inherit">Contact</Button>
-          </div>
-        </Toolbar>
-      </AppBar>
-    </Fragment>
+    <header className="flex justify-between items-center">
+      <div>
+        <img src={logo} alt="logo" width="250px" />
+      </div>
+      <div className="flex items-center relative">
+        <input className="search p-1" type="text" width="200px" />
+        <i className="material-icons absolute right-0">search</i>
+      </div>
+    </header>
   );
 };
 
