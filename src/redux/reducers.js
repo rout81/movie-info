@@ -4,7 +4,7 @@ import {
   REQUEST_MOVIE_FAILED,
 } from "./constants";
 
-const initialStateHero = {
+export const initialStateHero = {
   isPending: false,
   error: "",
   heroAssets: {
