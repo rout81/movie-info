@@ -1,9 +1,5 @@
 body {
   margin: auto;
   padding: 20px 50px;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "Roboto", sans-serif;
 }
