@@ -1,0 +1,7 @@
+.indivisualCard {
+  min-width: 200px;
+}
+
+.topCards {
+  overflow: auto;
+}

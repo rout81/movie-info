@@ -14073,6 +14073,7 @@ video {
   table-layout: fixed;
 }
 
+
 .text-left {
   text-align: left;
 }
@@ -93574,4 +93575,10 @@ video {
   .xl\:animate-bounce {
     animation: bounce 1s infinite;
   }
+}
+
+/* custom css */
+
+.textShadowSmall {
+  text-shadow: 1px 1px 1px black;
 }

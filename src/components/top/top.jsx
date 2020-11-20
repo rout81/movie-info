@@ -15,16 +15,25 @@ const mapStateToProps = (state) => {
 };
 
 const Top = ({ heroGallery, posterSize, baseUrl }) => {
-  console.log(heroGallery);
+  if (heroGallery.length > 0) {
+    heroGallery.map((i) => console.log(i));
+  }
   return (
     <div className="mt-10">
       <h2 className="font-semibold text-lg">Popular Now</h2>
-      <div className="mt-3 py-3 flex">
-        <TopCard
-          heroGallery={heroGallery}
-          posterSize={posterSize}
-          baseUrl={baseUrl}
-        />
+      <div className="mt-3 py-3 flex topCards">
+        {heroGallery.length > 0 ? (
+          heroGallery.map((heroGallery) => (
+            <TopCard
+              key={heroGallery.id}
+              heroGallery={heroGallery}
+              posterSize={posterSize}
+              baseUrl={baseUrl}
+            />
+          ))
+        ) : (
+          <div>please wait</div>
+        )}
       </div>
     </div>
   );
