@@ -7,10 +7,10 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import thunkMiddleware from "redux-thunk";
-import { movieHero } from "./redux/reducers";
+import { setId, movieHero } from "./redux/reducers";
 import logger from "redux-logger";
 
-const rootReducers = combineReducers({ movieHero });
+const rootReducers = combineReducers({ setId, movieHero });
 
 const store = createStore(
   rootReducers,

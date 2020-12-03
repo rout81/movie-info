@@ -1,0 +1,11 @@
+.indivisualCard {
+  min-width: 180px;
+}
+
+.topCards {
+  overflow: auto;
+}
+
+.textShadowSmall {
+  text-shadow: 2px 2px 3px black;
+}

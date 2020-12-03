@@ -1,12 +1,16 @@
 import React, { Fragment } from "react";
 import "./homepage.css";
 import Hero from "../../components/hero/hero";
-import Top from "../../components/top/top";
+import Popular from "../../components/popular/popular";
+import TopRated from "../../components/toprated/toprated";
+import Upcoming from "../../components/upcoming";
 
 const Homepage = () => (
   <Fragment>
     <Hero />
-    <Top />
+    <Popular />
+    <TopRated />
+    <Upcoming />
   </Fragment>
 );
 
