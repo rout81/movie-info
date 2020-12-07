@@ -6,10 +6,14 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [query, setQuery] = useState("");
   const [searchData, setSearchData] = useState([]);
-  console.log(searchData);
+  // console.log(searchData);
 
   const inputChange = (e) => {
     setQuery(e.target.value);
+  };
+
+  const clearValue = () => {
+    setQuery("");
   };
 
   const linkClicked = () => {
@@ -38,18 +42,19 @@ const Header = () => {
       <div className="flex items-center relative">
         <div>
           <input
+            onBlur={clearValue}
             value={query}
             onChange={inputChange}
             className="search p-1"
             type="text"
             width="200px"
           />
-          <div className="absolute bg-purple-900 text-sm text-gray-100">
+          <div className="absolute w-full bg-purple-900 text-sm text-gray-100">
             {searchData?.length > 0
               ? searchData.map((movie) => (
                   <Link
                     onClick={linkClicked}
-                    className="p-1 block size"
+                    className="p-1 block size hover:bg-purple-400"
                     to={"/" + movie.id}
                     key={movie.id}
                   >
