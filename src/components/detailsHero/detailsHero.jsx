@@ -18,7 +18,7 @@ const DetailsHero = ({ movie }) => {
           className="rounded-lg"
           src={baseUrl + assets.posterSize[3] + movie.poster_path}
           width="300px"
-          alt="sponge"
+          alt={movie.name}
         />
       </div>
 
