@@ -23,3 +23,9 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #50067a;
 }
+
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 5px 10px;
+  }
+}

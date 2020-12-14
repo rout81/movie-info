@@ -37,9 +37,9 @@ const Header = () => {
   return (
     <header className="flex justify-between items-center">
       <Link to="/">
-        <img src={logo} alt="logo" width="250px" />
+        <img src={logo} className="logo" alt="logo" width="250px" />
       </Link>
-      <div className="flex items-center relative">
+      <div className="flex items-center search-container relative">
         <div>
           <input
             onBlur={clearValue}
@@ -49,7 +49,7 @@ const Header = () => {
             type="text"
             width="200px"
           />
-          <div className="absolute w-full bg-purple-900 text-sm text-gray-100">
+          <div className="absolute results w-full bg-purple-900 text-sm text-gray-100">
             {searchData?.length > 0
               ? searchData.map((movie) => (
                   <Link
