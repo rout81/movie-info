@@ -4,6 +4,9 @@
 .search-data {
   width: 200px;
 }
+.results {
+  z-index:2;
+}
 
 @media only screen and (max-width: 600px) {
   .search-container {
@@ -21,6 +24,7 @@
   .results {
     width: 80%;
     right: 0;
+    z-index: 2;
   }
 
   .size {
